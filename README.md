@@ -24,7 +24,7 @@ Arduino
 
 Following libraries are required
 ```
-https://www.arduino.cc/reference/en/libraries/homekit-esp8266/
+https://github.com/datjan/Arduino-HomeKit-ESP8266 (fork from Mixiaoxiao/Arduino-HomeKit-ESP8266:master)
 https://www.arduinolibraries.info/libraries/one-wire
 https://www.arduinolibraries.info/libraries/dallas-temperature
 ```
