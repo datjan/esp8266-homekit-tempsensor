@@ -15,6 +15,7 @@ D1 mini -> DS18B20
 GND -> GND (black)
 D4 -> DQ (yellow)
 ```
+![alt text](https://github.com/datjan/esp8266-homekit-tempsensor/blob/main/Schema.png?raw=true)
 
 ## Development
 This sketch is for following development environment
