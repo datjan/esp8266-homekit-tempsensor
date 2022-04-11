@@ -38,6 +38,9 @@ DallasTemperature sensors(&oneWire);
 void setup() {
   Serial.begin(115200);
   wifi_connect(); // in wifi_info.h
+  
+  // homekit_storage_reset(); // to remove the previous HomeKit pairing storage when you first run this new HomeKit example
+  
   my_homekit_setup();
 }
 
@@ -82,6 +85,11 @@ void my_homekit_report() {
   // Get Temperature
   sensors.requestTemperatures();
   float temperature_value = sensors.getTempCByIndex(0); // SETUP read your real sensor here.
+
+  if (temperature_value > 99 or temperature_value < -99) {
+    LOG_D("Current temperature %.1f out of range (-100 to 100) set to 0", temperature_value);
+    temperature_value = 0;
+  }
   
   cha_current_temperature.value.float_value = temperature_value;
   LOG_D("Current temperature: %.1f", temperature_value);
